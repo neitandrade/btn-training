@@ -1,0 +1,127 @@
+:root{
+    --bg-default: #8257E5;
+    --text-color: #FFFFFF;
+    --border-color: #D9CDF7;
+    --second-bg: #3C3748;
+    --second-hover-bg: #6A617F;
+}
+
+*{
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    content: '';
+}
+
+.btnContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #130F1E;
+}
+
+.firstContainer{
+    display: grid;
+    gap: 12px;
+}
+
+.secondaryContainer{
+    display: grid;
+    gap: 12px;
+}	
+
+.primaryButton{
+    cursor: pointer;
+    background-color: var(--bg-default);
+    color: var(--text-color);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+
+    display: flex; /*ALINHAR ELEMENTOS DENTRO DO BOTÃO - LIBERA PROPRIEDADES DE ALIGN-ITENS e JUSTIFY-CONTENT*/
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#hover-primary:hover{
+    background-color: #9674E5;
+    position: relative;
+    transform: translateY(2px) scale(1.02);
+    transition: 200ms;
+}
+
+#focus-primary:focus, #focus-secondary:focus{
+    outline: solid 2px var(--border-color);
+}
+
+#disabled-primary:disabled, #disabled-secondary:disabled{
+    opacity: 0.55;
+    cursor: not-allowed;
+} 
+
+#loading-primary, #loading-secondary{
+    cursor: progress;
+}
+
+#loading-primary i, #loading-secondary i{
+    animation: spin 1s infinite ease-in-out /*ou linear*/;
+    font-size: 18px;
+}
+
+@keyframes spin{ /* PONTO DE INICIO E FIM DE UMA ANIMAÇÃO = KEYFRAME */
+    from{/*0%*/
+        transform: rotate(0deg);
+    }
+    to{/*100%*/
+        transform: rotate(360deg);
+    }
+}
+
+#movable-primary, #movable-secondary{
+    cursor: move;
+}
+
+#movable-primary i, #movable-secondary i{
+    font-size: 18px;
+}
+
+/* ----------------------------------- SECONDARY ------------------------------ */
+
+.secondaryButton{
+    cursor: pointer;
+    background-color: var(--second-bg);
+    color: var(--text-color);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+
+    display: flex; /*ALINHAR ELEMENTOS DENTRO DO BOTÃO - LIBERA PROPRIEDADES DE ALIGN-ITENS e JUSTIFY-CONTENT*/
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#hover-secondary:hover{
+    background-color:var(--second-hover-bg);
+    position: relative;
+    transform: translateY(2px) scale(1.02);
+    transition: 200ms;
+}
